@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 const Filter = ({ state }) => {
-    const [filterValue, setFilterValue] = useState('');
+    const [filterValue, setFilterValue] = useState("");
   return (
     <div>
       <h2>Contacts</h2>
@@ -30,7 +30,6 @@ const Filter = ({ state }) => {
           </span>
         </li>
       </ul>
-     
     </div>
   );
 };
