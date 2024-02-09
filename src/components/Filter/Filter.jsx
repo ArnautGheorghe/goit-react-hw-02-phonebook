@@ -23,9 +23,8 @@ const Filter = ({ state }) => {
             {filterValue === state.filter.name ? (
               <span>
                 {state.filter.name}:{state.filter.number}
-                
+                {alert(`${state.filter.name} is already exist in contacts.`)}
               </span>
-              {alert(`${state.filter.name} is already in contacts.`)}
             ) : (
               'Contactul nu exista'
             )}

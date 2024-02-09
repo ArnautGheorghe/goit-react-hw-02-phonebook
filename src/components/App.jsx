@@ -16,12 +16,14 @@ export const App = () => {
     ],
 
    
-    filter: {name: 'Rosie', number: '459-12-56'},
+    filter: { name: 'Rosie', number: '459-12-56' },
+    name: "Rosie",
+    number: '459-12-56',
   };
 
   return (
     <div>
-      <Phonebook />
+      <Phonebook state={state} />
       <Filter state={state}  />
       <Contacts state={state} contacts={state.contacts} />
     </div>
