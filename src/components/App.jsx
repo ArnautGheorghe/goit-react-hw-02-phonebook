@@ -1,7 +1,8 @@
 
 import Phonebook from './Phonebook/Phonebook';
 import Filter from './Filter/Filter';
-import Contacts from './Contacts/Contacts';
+import Contacts from "./Contacts/Contacts"
+
 
  
 
@@ -24,8 +25,10 @@ export const App = () => {
   return (
     <div>
       <Phonebook state={state} />
-      <Filter state={state}  />
+      <Filter state={state} />
       <Contacts state={state} contacts={state.contacts} />
     </div>
   );
 };
+
+export default App;
