@@ -1,7 +1,7 @@
 
 import PropTypes from 'prop-types';
 
-function Button({ children, action, type = 'button' }) {
+function Button({ children, action,  type = 'button' }) {
   
 
   
@@ -17,6 +17,7 @@ Button.propTypes = {
   children: PropTypes.any,
   action: PropTypes.func,
   button: PropTypes.string,
+  test:PropTypes.func,
 };
 
 export default Button;
