@@ -10,44 +10,37 @@ class Contacts extends Component {
   };
   state = {
     isAddFormVisible: false,
-    list: [
-      {
-        id: 0,
-        name: 'John',
-        lastName: 'Smith',
-        number: '07123456',
-        email: 'johnsmith@company.com',
-        city: 'Paris',
-        role: 'Administrator',
-      },
+    contacts: [
+      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
   };
 
-  renderList = list => {
-    return list.map(el => {
+  renderList = contacts => {
+    return contacts.map(el => {
       return (
-        <div key={el.id}>
-          <div>
-            {el.name} :{el.number}
-          </div>
-        </div>
+        <ul>
+          <li key={el.id}>
+            <div>
+              {el.name} :{el.number}
+            </div>
+          </li>
+        </ul>
       );
     });
   };
 
   render() {
-    const { list } = this.state;
+    const { contacts } = this.state;
     return (
       <section className="section">
-        <h1>
-          <span>Contacts</span>
-        </h1>
-        <div>{this.renderList(list)}</div>
+        
+        <div>{this.renderList(contacts)}</div>
       </section>
     );
   }
-
-  
 }
 
 export default Contacts;
