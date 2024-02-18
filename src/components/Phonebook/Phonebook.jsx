@@ -11,14 +11,18 @@ export default class Phonebook extends Component {
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
+    filter: '',
+  };
+  handleChange = evt => {
+    const { name, value } = evt.target;
+    this.setState({ [name]: value });
+    console.log('change');
   };
 
   renderList = items => {
     return items.map(el => {
-        return (
-          
+      return (
         <div>
-          
           <ul>
             <li key={el.id}>
               <div>
@@ -33,15 +37,29 @@ export default class Phonebook extends Component {
   };
 
   render() {
-    const { isAddFormVisible, contacts } = this.state;
+    const { isAddFormVisible, contacts, filter } = this.state;
 
     return (
       <div>
-        
         {isAddFormVisible || <PhonebookForm onFormSubmit={this.handleTutor} />}
-        
+        <div>
+          <h2>Contacts</h2>
+        </div>
+        <div>
+          <h3>Find contacts by name</h3>
+
+          <label>
+            <input
+              type="text"
+              value={filter}
+              name="filter"
+              placeholder="Cauta dupa nume"
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+        </div>
         <div> {this.renderList(contacts)}</div>
-       
       </div>
     );
   }
